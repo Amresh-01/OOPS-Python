@@ -53,6 +53,11 @@
 
 
 
+
+
+
+
+
 # Question: 2 : What is Dynamically typed Language?
 # Ans :  A dynamically typed language is a programming language where you don’t need to declare the data type of a variable explicitly.
 # The type is determined automatically at runtime (when the program is running).
@@ -66,9 +71,16 @@
 
 
 
+
+
+
+
 # Question: 3 : What is Interpreted language?
 # Ans : An interpreted language executes code line-by-line using an interpreter without prior compilation.
 # It makes development faster and debugging easier, but execution is generally slower compared to compiled languages.
+
+
+
 
 
 
@@ -101,9 +113,16 @@
 
 
 
+
+
+
+
 # Question: 5 : What is Zen of Python?
 # Ans : The Zen of Python is a set of guiding principles written by Tim Peters that define best practices for writing 
 # clean, readable, and efficient Python code. It emphasizes simplicity, readability, and consistency in programming.
+
+
+
 
 
 
@@ -116,8 +135,50 @@
 #     Equality operator: The "==" and "!=" are called equality operators that compare the objects based on their values.
 
 
+
+
+
+# List
+
 L=[2,4,5,6,7,7,8,9]
 print(L)
 # print(sorted(L)) ye original list ko change nahi krega mtl agar print(L)->[2,4,5,6,7,7,8,9]
-# but L.sort()  original List ko change kr dega..
+# but L.sort()  original List ko change kr dega...
 
+
+
+
+
+
+
+# Tuple
+
+# A tuple is similar to list.The difference between the two is that we cannot change the element of a tuple once it is assigned
+# whereas we can change the elements of a list.
+
+# ex. t1=(2,) this is single item
+
+# Tupla are faster than List
+
+# zipping tuple
+# a=(1,2,3,4)
+# b=(5,6,7,8)
+# tuple(zip(a,b))
+
+
+
+
+
+
+
+# Set 
+
+# empty set ->  s=set()
+# s1={1,2,3} 1d set 
+# s2={1,'hello',4,5,(1,2,3)}
+# s3=set([1,2,3,4])
+# s4={1,2,[3,4]}
+
+# s5={1,2,3}
+# s6={3,2,1}
+# print(s5==s6) -> true   item same hai
