@@ -182,3 +182,21 @@ print(L)
 # s5={1,2,3}
 # s6={3,2,1}
 # print(s5==s6) -> true   item same hai
+# s.pop() ->random delete krega.
+# real life example -> Union,intersection mai use hota hai.
+
+
+
+
+
+
+
+
+
+# function 
+# def is_even(i):           -> def is keyword
+#     x%2==0
+# return x
+
+# is_even(7)   function calling.
+
