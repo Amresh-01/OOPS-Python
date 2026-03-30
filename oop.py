@@ -9,12 +9,44 @@
 
 
 #------------ATM class------------
+
+# Ques:-> Whas is the true value of Constructor?
+# Ans: jo bhi configuration wale task hai wo. jo bhi task jo aap usr ke bin apooche krna chahte ho 
+#        us constructor ke andar rakhte 
+    #    - Automatically called when object is created
+
+# Types of constructor 
+
+# 1. Default constructor:   
+#     Takes no Parameter , set default values.
+
+# example:     class ATM {
+# public:
+#     ATM() {
+#         cout << "ATM Created";
+#     }
+# };
+
+# 2. Parameterized constructor :
+#     Takes parameter , used to intialize value at object creation
+
+# example :  class Account {
+# public:
+#     int balance;
+
+#     Account(int b) {
+#         balance = b;
+#     }
+# };
+
+
 class Atm:
     def __init__(self):
     #__init__ -> constructor : kisi object k attributes ko intialize krne k liye use kiya jata hai.
     # attributes -> properties hoti ho jo kisi object ya class ke andar stored hote hai. Here->pin,balance
         self.pin = ''
         self.balance = 0
+        self.menu()
         print('i am executed')
 
     def menu(self):
@@ -61,4 +93,40 @@ else:
             self.menu()
     
     def check_balance(self):
-        usr_
+        user_pin = input('enter your pin')
+        if user_pin == self.pin:
+            print('your balance is', self.balance)
+        else:
+            print('chal nikal yaha se')
+        
+    def withdraw(self):
+        user_pin == input('enter the pin')
+        if user_pin == self.pin:
+            # allowed to withdraw
+            amount = int(input('Enter the amount'))
+            if amount<self.balance:
+                self.balance = self.balance - amount
+                print
+        else:
+            print("you are not eligible to do this.")
+
+
+
+class Point:
+    def __init__(self,x,y):
+        self.x_cod = x
+        self.y_cod = y
+
+    def __str__(self):
+        return '<{}{}>' .format(self.x_cod,self.y_cod)     # ye print krne ke liye hai example: <3,4>
+
+    def eucledian(self,other):
+        return ((self.x_cod-other.x_cod)**2 + (self.y_cod - other.y_cod)**2)**0.5
+    
+    def distance_from_origin(self):
+        return (self.x_cod**2 )
+        return self.eucledian_distance(self,Point(0,0))
+    def __int__(self,A,B,C):
+        
+        
+        
