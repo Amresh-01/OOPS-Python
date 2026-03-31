@@ -1,6 +1,6 @@
 # class
 #     1. data or property
-#     2. functionc or behaviour
+#     2. function or behaviour
 
 # Systax to create an object
 # objectname = classname()
@@ -8,7 +8,6 @@
 
 
 
-#------------ATM class------------
 
 # Ques:-> Whas is the true value of Constructor?
 # Ans: jo bhi configuration wale task hai wo. jo bhi task jo aap usr ke bin apooche krna chahte ho 
@@ -40,75 +39,63 @@
 # };
 
 
+
+#------------ATM class------------
+
+
 class Atm:
-    def __init__(self):
+    def __init__(self,account_number,pin,balance=0):
     #__init__ -> constructor : kisi object k attributes ko intialize krne k liye use kiya jata hai.
     # attributes -> properties hoti ho jo kisi object ya class ke andar stored hote hai. Here->pin,balance
-        self.pin = ''
-        self.balance = 0
-        self.menu()
-        print('i am executed')
+        self.account_number=account_number
+        self.__pin = pin         # Private attribute bnane ke liye use kiya hai __ (Encapsulation) 
+        self.__balance = balance
 
-    def menu(self):
-        user_input = input("""
-        Hi how can I help you?
-        1. Press 1 to create pin
-        2. Press 2 to change pin
-        3. Press 3 to check balance
-        4. Press 4 to withdraw.
-        5. Anything else to exit.
-        """)
-if user_input == '1':
-    # create pin
-    pass
-elif user_input == '2':
-    # change pin
-    pass
-elif user_input == '3':
-    # check balance
-    pass
-elif user_input == '4':
-    # withdraw
-    pass
-else:
-    exit()
+    def __verify__pin(self,pin):        
+        # ye method sirf class ke andar hi use kr skte hai (Private method)
+        return self.__pin == pin
 
-    def create_pin(self):
-        user_pin = input('enter your pin')
-        self.pin=user_pin
+    def check_balance(self,pin):
+         # Abstraction -> user ko sirf balance dekhna hai pin check krne ka logic hide hai
+        if self.__verify__pin(pin):
+            print(f"Account{self.account_number} -> Balance:{self.__balance}")
+        else:
+            print("Incorrect pin")
 
-        user_balance = int(input('enter balance'))
-        self.balance = user_balance
+    def deposit(self,amount,pin):
+       
+        if self.__verify__pin(pin):
+            if amount>0:
+                self.__balance +=amount
+                print(f"{amount} deposited. New amount {self.__balance}")
+            else:
+                print("deposit must be positive")
+        else:
+            print("Incorrect Pin")
 
-        print('pin created successfully')
+
+    def withdraw(self,amount,pin):
+        # Polymorphism ke liye ye method child classes override kr sakti hai (CurrentAccount me)
+        if self.__verify__pin(pin):
+            if amount < self.__balance:
+                self.__balance -= amount
+                print(f"{amount} withdrawn, Remaining Balance {self.__balance}")
+            else:
+                print("Insufficient amount")
+        else:
+            print("Incorrect pin")
+
+    def _get_balance(self):       # getter (Encapsulation) -> indirectly data ko access krne ka way
+        return self.__balance
     
-    def change_pin(self):
-        old_pin = input('enter old pin')
+    def _set_balance(self,value):    #setter (Encapsulation) -> indirectly data ko modify krne ka way
+        self.__balance = value
+ 
+class SavingAccount(ATM):
+    def __int__(self, account_number, pin, balance=0, overdraft_limit=0):
+        super().__init__(account_number, pin, balance)
+        
 
-        if old_pin == self.pin:
-            new_pin = input('enter new pin.')
-        
-        else:
-            print('you are not elgible to che=ange the pin')
-            self.menu()
-    
-    def check_balance(self):
-        user_pin = input('enter your pin')
-        if user_pin == self.pin:
-            print('your balance is', self.balance)
-        else:
-            print('chal nikal yaha se')
-        
-    def withdraw(self):
-        user_pin == input('enter the pin')
-        if user_pin == self.pin:
-            # allowed to withdraw
-            amount = int(input('Enter the amount'))
-            if amount<self.balance:
-                self.balance = self.balance - amount
-                print
-        else:
-            print("you are not eligible to do this.")
 
 
 
@@ -169,4 +156,4 @@ print(id(p1))
 
 
 
-# Encapsulation 
+
