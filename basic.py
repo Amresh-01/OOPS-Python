@@ -12,40 +12,34 @@
 # Cybersecurity
 
 # Benefits of Using Python
-# 1. Easy to Learn & Read
 
+# 1. Easy to Learn & Read
 # Python has a clean syntax similar to English, so beginners can understand it quickly.
 
 # 2. Interpreted Language
-
 # No need to compile code — you can run it directly, which speeds up development.
 
 # 3. Large Standard Library
-
 # Python comes with many built-in modules (like math, file handling, etc.), so you don’t need to write everything from scratch.
 
 # 4. Cross-Platform
-
 # Python works on Windows, Linux, and macOS without major changes.
 
 # 5. Huge Community Support
-
 # Millions of developers use Python, so finding help, tutorials, and libraries is easy.
 
 # 6. Versatile
-
 # You can use Python for:
-
 # Web apps
 # Machine learning (TensorFlow, PyTorch)
 # Data analysis (Pandas, NumPy)
 # Automation scripts
-# 7. Less Code, More Work
 
+
+# 7. Less Code, More Work
 # Python allows you to do complex tasks in fewer lines compared to languages like Java or C++.
 
 # 8. Strong Integration
-
 # Python can easily integrate with other languages like C, C++, and Java.
 
 

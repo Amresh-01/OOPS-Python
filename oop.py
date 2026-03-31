@@ -112,7 +112,18 @@ else:
 
 
 
+
+# Ques: -> Write OOP classes to handle the following scenarios.
+#         1. A user can create and view 2D coordinates.
+#         2. A user can find out the distance between 2 coordinators 
+#         3. A user can find out the distance of a coordinate from origin
+#         4. A user can check if a point lies on a given line.
+#         5. A user can find the distance between a given 2D point and a given line.
+
+
+
 class Point:
+    # self is default parameter
     def __init__(self,x,y):
         self.x_cod = x
         self.y_cod = y
@@ -126,7 +137,36 @@ class Point:
     def distance_from_origin(self):
         return (self.x_cod**2 )
         return self.eucledian_distance(self,Point(0,0))
-    def __int__(self,A,B,C):
+
+class Line:
+    def __init__(self,A,B,C):
+        self.A=A
+        self.B=B
+        self.C=C
+
+    def __str__(self):
+        return '{}x + {}y + {} = 0'.format(self.A,self.B,self.C)      # l1 = Line(2,3,4)    
+    
+    def point_on_line(line,point):
+        if line.A*point.x_cod + line.B*point.y_cod + line.C == 0:   
+            return "Points lies in the line"
+        else:
+            return "Points does not lies on the Line."
         
         
-        
+# Refrence Variables
+
+class Person:
+
+    def __int__(self):
+        self.name = "Nitish"
+        self.gender = "Male"
+
+p = Person()    # p ek reference variable hai jiske pass address hai object ka.
+print(id(p))
+p1=greet(p)
+print(id(p1))
+
+
+
+# Encapsulation 
