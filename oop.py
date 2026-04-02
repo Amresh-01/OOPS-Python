@@ -9,34 +9,54 @@
 
 
 
-# Ques:-> Whas is the true value of Constructor?
-# Ans: jo bhi configuration wale task hai wo. jo bhi task jo aap usr ke bin apooche krna chahte ho 
-#        us constructor ke andar rakhte 
-    #    - Automatically called when object is created
+Ques:-> Whas is the true value of Constructor?
+Ans: jo bhi configuration wale task hai wo. jo bhi task jo aap usr ke bin apooche krna chahte ho 
+       us constructor ke andar rakhte 
+       - Automatically called when object is created
 
-# Types of constructor 
+Types of constructor 
 
-# 1. Default constructor:   
-#     Takes no Parameter , set default values.
+1. Default constructor:   
+    Takes no Parameter , set default values.
 
-# example:     class ATM {
-# public:
-#     ATM() {
-#         cout << "ATM Created";
-#     }
-# };
+# example:     
+class ATM {
+    public:
+        ATM() {
+            cout << "ATM Created";
+        }
+}
 
-# 2. Parameterized constructor :
-#     Takes parameter , used to intialize value at object creation
+2. Parameterized constructor :
+    Takes parameter , used to intialize value at object creation
 
-# example :  class Account {
-# public:
-#     int balance;
+example :  class Account {
+public:
+    int balance;
 
-#     Account(int b) {
-#         balance = b;
-#     }
-# };
+    Account(int b) {
+        balance = b;
+    }
+};
+
+
+# Jab bhi static variable ko use krte ho to class ka naam lekr use krte hai.
+# jab bhi  instance variable ko use krte hai to object ka naam lekr use krte hai.
+
+# Example:
+
+class Atm:
+    __counter = 1
+    def __init__(self):
+        print(id(slef))
+        self.pin = ''
+        self.__balance = 0
+        self.cid = Atm.__counter + 1   # here we use staic and instance variable 
+
+
+
+
+
 
 
 
@@ -94,6 +114,7 @@ class Atm:
 class SavingAccount(ATM):
     def __int__(self, account_number, pin, balance=0, overdraft_limit=0):
         super().__init__(account_number, pin, balance)
+        # super() -> iska use parent class ki properties 
         
 
 
@@ -106,8 +127,6 @@ class SavingAccount(ATM):
 #         3. A user can find out the distance of a coordinate from origin
 #         4. A user can check if a point lies on a given line.
 #         5. A user can find the distance between a given 2D point and a given line.
-
-
 
 class Point:
     # self is default parameter
