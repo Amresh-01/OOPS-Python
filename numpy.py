@@ -15,9 +15,32 @@ import numpy as np
 # Array initialization
 a = np.array([1,2,3,4])
 
-# 
-np.zeroes((3,4))
+
+np.zeroes((3,4))    
 output: -> array([[0.,0.,0.,0.],
                   [0.,0.,0.,0.],
                   [0.,0.,0.,0.]
                   ])
+
+np.zeroes((3,4))    
+output: -> array([[1.,1.,1.,1.],
+                  [1.,1.,1.,1.],
+                  [1.,1.,1.,1.]
+                  ])
+
+np.random.random((3,4)) -> give random no. same array as like above have 
+
+np.linspace(-10,10,10)  -> fixed length generate krega from starting range to end range 
+
+array.ndim -> in 3d array (a,b,c) return krta hai jisme a-> kitne 2D Array hai , b -> kitne row , c-> kitne column 
+
+array.itemsize()    
+
+array.resshape()
+
+array.dtype -> data type btata hai -> int32 , int64, float64
+
+array.astype(np.int32)    -> convert kr diya hai dusre data type mai.
+
+array+2 -> ye sab mai add hoga
+
